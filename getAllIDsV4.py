@@ -63,7 +63,7 @@ for letter in ALPHA:
         if len(people['data'])<200:
             break
         offset += 200
-with open("allRunners.csv",'a',newline = "") as file:
+with open("allIDs.csv",'a',newline = "") as file:
     writer = csv.writer(file,delimiter = ";")
     for ID in allIDS:
         writer.writerow([ID])
