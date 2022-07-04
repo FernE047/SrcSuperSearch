@@ -16,5 +16,4 @@ a few problems to solve with the scripts:
  - it doesn't get users names started with accented letters like áàä...
  - it doesn't get users started with the plus characters "+"
  
- - GetData.py doesn't get the area and area label info
- - dates are not formatted
+ - GetData.py dates are not formatted
