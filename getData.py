@@ -49,8 +49,6 @@ with open("allRunnersData.csv","w",newline = "", encoding = "UTF-8") as csvOutpu
     lenght = 0
     for idd in allIDS:
         lenght +=1
-        if lenght < STOPPED:
-            continue
         ALL = anyRequests(f"https://www.speedrun.com/_fedata/user/runs?userId={idd}&vary=1654385324&ver=4")
         if 'error' in ALL:
             print(idd)
@@ -60,9 +58,11 @@ with open("allRunnersData.csv","w",newline = "", encoding = "UTF-8") as csvOutpu
         user.append(data['id'])
         user.append(data['name'])
         user.append(data['pronouns'])
-        if 'areas' in ALL:
-            user.append(ALL['areas'][0]['name'])
-            user.append(ALL['areas'][0]['label'])
+        if len(ALL['areas']):
+            if 'name' in ALL['areas'][0]:
+                user.append(ALL['areas'][0]['name'])
+            if 'label' in ALL['areas'][0]:
+                user.append(ALL['areas'][0]['label'])
         else:
             user.append("None")
             user.append("None")
@@ -137,10 +137,16 @@ with open("allRunnersData.csv","w",newline = "", encoding = "UTF-8") as csvOutpu
                 else:
                     obsoletes[1] += 1
                 obsoletes[2] += 1
+        categories[0] = len(categories[0])
+        categories[1] = len(categories[1])
         categories[2] = categories[0] + categories[1]
+        games[0] = len(games[0])
+        games[1] = len(games[1])
         games[2] = len(games[2])
+        platforms[0] = len(platforms[0])
+        platforms[1] = len(platforms[1])
         platforms[2] = len(platforms[2])
-        user += runs + categores + games + platforms + wrs + podiums + obsoletes
+        user += runs + categories + games + platforms + wrs + podiums + obsoletes
         user.append(len(gamesWithAWr))
         user.append(len([a for a in ALL['categories'] if a['isMisc']]))
         user.append(len(ALL['levels']))
