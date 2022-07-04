@@ -61,8 +61,12 @@ with open("allRunnersData.csv","w",newline = "", encoding = "UTF-8") as csvOutpu
         if len(ALL['areas']):
             if 'name' in ALL['areas'][0]:
                 user.append(ALL['areas'][0]['name'])
+            else:
+                user.append("None")
             if 'label' in ALL['areas'][0]:
                 user.append(ALL['areas'][0]['label'])
+            else:
+                user.append("None")
         else:
             user.append("None")
             user.append("None")
