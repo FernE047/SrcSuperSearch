@@ -60,9 +60,9 @@ with open("allRunnersData.csv","w",newline = "", encoding = "UTF-8") as csvOutpu
         user.append(data['id'])
         user.append(data['name'])
         user.append(data['pronouns'])
-        if 'areas' in data:
-            user.append(data['areas'][0]['name'])
-            user.append(data['areas'][0]['label'])
+        if 'areas' in ALL:
+            user.append(ALL['areas'][0]['name'])
+            user.append(ALL['areas'][0]['label'])
         else:
             user.append("None")
             user.append("None")

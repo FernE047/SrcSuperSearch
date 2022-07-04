@@ -17,5 +17,4 @@ a few problems to solve with the scripts:
  - it doesn't get users started with the plus characters "+"
  
  - GetData.py makes the wrong calculus to platforms and games, it adds the ILs and FGs instead of putting in a set.
- - it doesn't get the area and area label info
- - any date is not formatted
+ - dates are not formatted
