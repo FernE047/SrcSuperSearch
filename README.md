@@ -10,8 +10,6 @@ the GetData.py uses only one request per user, and each user takes more or less 
 
 a few problems to solve with the scripts:
 
- - discover what coin means
-
  - GetAllIDs.py doesn't get all the users on speedrun.com, it only gets users that starts with one of these characters: _-.|@0123456789abcdefghijklmnopqrstuvwxyz not case sensitive,
  - it doesn't get users names started with accented letters like áàä...
  - it doesn't get users started with the plus characters "+"
